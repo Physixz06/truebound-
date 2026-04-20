@@ -1,0 +1,76 @@
+<!--
+    <section id="services" class="section reveal">
+      <h2>Waar richten we ons op</h2>
+      <p>Dit zijn de concrete zaken waarbij we creators praktisch ondersteunen tijdens hun traject.</p>
+      <div class="services-carousel">
+        <div class="services-track">
+          <article class="service-card">
+            <div class="service-check">&#10003;</div>
+            <h3>Onboarding</h3>
+            <p>We helpen je opstarten en zorgen dat je account en traject vanaf het begin duidelijk staan.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-check">&#10003;</div>
+            <h3>Accountopvolging</h3>
+            <p>We volgen je profiel op en geven richting bij vragen rond je aanpak, planning en ontwikkeling.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-check">&#10003;</div>
+            <h3>Probleemoplossing</h3>
+            <p>Bij bans, storingen of onduidelijkheden schakelen we snel zodat je weer verder kunt.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-check">&#10003;</div>
+            <h3>Snelle vragen en support</h3>
+            <p>Je kunt snel bij ons terecht voor praktische hulp rond LIVE, accountvragen en dagelijkse opvolging.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    -->
+<!--
+    <section id="how-it-works" class="section reveal">
+      <h2>Hoe werkt het?</h2>
+      <p>In drie duidelijke stappen zorgen we ervoor dat je snel weet waar je aan toe bent en hoe we samen groeien.</p>
+      <div class="steps-grid">
+        <article class="step-card reveal">
+          <span class="step-number">01</span>
+          <h3>Neem contact op</h3>
+          <p>Stuur een TikTok DM of Discord bericht en vertel kort wie je bent en wat voor content je maakt.</p>
+        </article>
+        <article class="step-card reveal">
+          <span class="step-number">02</span>
+          <h3>Kennismaking</h3>
+          <p>We bekijken samen je profiel, je doelen en of TrueBound goed bij jou als creator past.</p>
+        </article>
+        <article class="step-card reveal">
+          <span class="step-number">03</span>
+          <h3>Start met groeien</h3>
+          <p>Na je onboarding krijg je begeleiding, community support en hulp wanneer je die nodig hebt.</p>
+        </article>
+      </div>
+    </section>
+-->
+    <!--
+    <section id="benefits" class="section reveal">
+      <h2>Voordelen</h2>
+      <p>Behaal je quota en verdien een extra bonus.</p>
+      <div class="benefits-grid">
+        <article class="benefit-card reveal">
+          <div class="benefit-icon">UP</div>
+          <h3>Extra motivatie</h3>
+          <p>Bonussen geven een extra duwtje om consistente resultaten neer te zetten over langere periodes.</p>
+        </article>
+        <article class="benefit-card reveal">
+          <div class="benefit-icon">OK</div>
+          <h3>Duidelijke targets</h3>
+          <p>Je weet waar je naartoe werkt en welke prestaties gekoppeld zijn aan extra voordelen.</p>
+        </article>
+        <article class="benefit-card reveal">
+          <div class="benefit-icon">24/7</div>
+          <h3>Beloning voor inzet</h3>
+          <p>Wie actief bouwt aan zijn traject, ziet die inzet ook terug in concrete extra's.</p>
+        </article>
+      </div>
+    </section>
+  -->

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TrueBound Agency - Ledenlijst</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+  <div class="container">
+    <header>
+      <a href="Index.html" class="brand-banner" aria-label="Terug naar home"></a>
+      <nav class="navigation">
+        <a href="Index.html#services">Diensten</a>
+        <a href="Index.html#portfolio">Portfolio</a>
+        <a href="Index.html#contact">Contact</a>
+        <a href="members.html">Ledenlijst</a>
+      </nav>
+    </header>
+
+    <section class="page-intro reveal">
+      <h1>Volledige ledenlijst</h1>
+      <p class="hero-text">Hier vind je alle creators binnen TrueBound, samen met hun profiel, volgers en huidige live status.</p>
+      <div class="page-intro-actions">
+        <a class="member-live-action" href="Index.html#members">Terug naar overzicht</a>
+        <a class="member-live-action member-live-action-secondary" href="Index.html#contact">Contact</a>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <h2>Community cijfers</h2>
+      <p>Deze cijfers worden automatisch berekend op basis van alle leden die op deze site zijn opgeslagen.</p>
+      <div class="member-summary-grid">
+        <article class="stat-card reveal">
+          <p class="stat-label">Totaal leden</p>
+          <strong id="members-page-total-members" class="stat-value">0</strong>
+        </article>
+        <article class="stat-card reveal">
+          <p class="stat-label">Totaal volgers</p>
+          <strong id="members-page-total-followers" class="stat-value">0</strong>
+        </article>
+        <article class="stat-card reveal">
+          <p class="stat-label">Nu live</p>
+          <strong id="members-page-total-live" class="stat-value">0</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="members-layout">
+        <div>
+          <h2>Alle leden</h2>
+          <p>Deze lijst toont alle creators die lokaal in de site zijn opgeslagen.</p>
+          <div id="members-page-grid" class="member-live-grid"></div>
+        </div>
+
+        <aside class="card admin-card reveal">
+          <h3>Ledenbeheer</h3>
+          <p>Nieuwe leden kun je toevoegen door het bestand <code>members-data.js</code> uit te breiden met een extra member-object.</p>
+          <p class="helper-note">De homepage en deze ledenpagina rekenen de totalen daarna automatisch opnieuw uit.</p>
+        </aside>
+      </div>
+      <p class="members-page-note">Opmerking: de live badge wordt in deze lokale versie handmatig beheerd per member via het veld <code>isLive</code>.</p>
+    </section>
+
+    <footer class="footer">
+      <p>TrueBound Agency - transparante support, sterke begeleiding en een echte creator community.</p>
+    </footer>
+  </div>
+
+  <script src="members-data.js"></script>
+  <script src="members-store.js"></script>
+  <script>
+    const membersApi = window.TrueBoundMembers;
+    const membersGrid = document.querySelector('#members-page-grid');
+    const totalMembers = document.querySelector('#members-page-total-members');
+    const totalFollowers = document.querySelector('#members-page-total-followers');
+    const totalLive = document.querySelector('#members-page-total-live');
+    const revealItems = Array.from(document.querySelectorAll('.reveal'));
+
+    const renderMembersPage = () => {
+      if (!membersApi) {
+        return;
+      }
+
+      const members = membersApi.getAllMembers();
+      const stats = membersApi.getStats(members);
+
+      totalMembers.textContent = membersApi.formatFollowers(stats.totalMembers);
+      totalFollowers.textContent = membersApi.formatFollowers(stats.totalFollowers);
+      totalLive.textContent = membersApi.formatFollowers(stats.totalLive);
+      membersGrid.innerHTML = members.map((member) => membersApi.renderMemberCard(member)).join('');
+
+      document.querySelectorAll('#members-page-grid .reveal').forEach((item) => revealItems.push(item));
+    };
+
+    renderMembersPage();
+
+    if (revealItems.length) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+
+      revealItems.forEach((item) => revealObserver.observe(item));
+    }
+  </script>
+</body>
+</html>
